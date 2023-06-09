@@ -160,6 +160,7 @@ Plug 'Shougo/echodoc.vim'
 Plug 'terryma/vim-smooth-scroll'
 Plug 'rhysd/clever-f.vim'
 Plug 'vim-scripts/indentpython.vim'
+Plug 'luochen1990/rainbow'
 
 " 加载自定义插件
 if filereadable(expand($HOME . '/.vimrc.custom.plugins'))
@@ -353,6 +354,32 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 nnoremap <leader>g :GV<cr>
 nnoremap <leader>G :GV!<cr>
 nnoremap <leader>gg :GV?<cr>
+
+" 彩色括号-luochen1990/rainbow
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+            \	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+            \	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+            \	'operators': '_,_',
+            \	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+            \	'separately': {
+            \		'*': {},
+            \		'tex': {
+            \			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+            \		},
+            \		'lisp': {
+            \			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+            \		},
+            \		'vim': {
+            \			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+            \		},
+            \		'html': {
+            \			'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+            \		},
+            \		'css': 0,
+            \		'nerdtree': 0,
+            \	}
+            \}
 
 " 加载自定义配置
 if filereadable(expand($HOME . '/.vimrc.custom.config'))
