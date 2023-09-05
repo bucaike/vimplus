@@ -161,6 +161,7 @@ Plug 'terryma/vim-smooth-scroll'
 Plug 'rhysd/clever-f.vim'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'luochen1990/rainbow'
+Plug 'zivyangll/git-blame.vim'
 
 " 加载自定义插件
 if filereadable(expand($HOME . '/.vimrc.custom.plugins'))
@@ -380,6 +381,9 @@ let g:rainbow_conf = {
             \		'nerdtree': 0,
             \	}
             \}
+
+" git blame
+nnoremap <Leader>gb :<C-u>call gitblame#echo()<CR>
 
 " 加载自定义配置
 if filereadable(expand($HOME . '/.vimrc.custom.config'))
